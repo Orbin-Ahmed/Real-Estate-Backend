@@ -5,8 +5,13 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon app.js",
-    "postinstall": "prisma generate"
+    "dev": "nodemon app.js",
+    "vercel-build": "prisma generate && prisma migrate deploy",
+    "start": "node server.js",
+    "migrate:dev": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "migrate:status": "prisma migrate status",
+    "generate": "prisma generate"
   },
   "keywords": [],
   "author": "",
