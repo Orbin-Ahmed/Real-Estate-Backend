@@ -5,7 +5,12 @@ import cookieParser from "cookie-parser";
 import "dotenv/config";
 
 const app = express();
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://dream-estate-six.vercel.app"],
+    credentials: true,
+  })
+);
 const port = 8000;
 
 app.use(express.json());
